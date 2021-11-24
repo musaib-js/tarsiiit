@@ -15,3 +15,7 @@ class Team(models.Model):
     def __str__(self):
         return self.name
     
+class Gallery(models.Model):
+    sno= models.AutoField(primary_key = True)
+    img = models.ImageField(upload_to = "media")
+    

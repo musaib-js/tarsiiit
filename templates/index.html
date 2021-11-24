@@ -26,7 +26,7 @@
                 {% for x in research  %}
                     <div class="col-sm-4">
                         <div class="porduct-box">
-                            <img class="img-responsive" src="/static/assets/images/product-1.jpg" alt="product">
+                            <img class="img-responsive" src="/media/{{x.img}}" alt="product">
                             <h3 class="product-title">{{x.title}}</h3>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                 {% for x in posts  %}
                     <div class="col-sm-4">
                         <div class="porduct-box">
-                            <img class="img-responsive" src="/static/assets/images/product-1.jpg" alt="product">
+                            <img class="img-responsive" src="/media/{{x.img}}" alt="product">
                             <h3 class="product-title">{{x.title}}</h3>
                         </div>
                     </div>
@@ -105,9 +105,11 @@
                     <div class="boxed">
                        <div class="col-sm-12">
                            <div id="partner-slider" class="owl-carousel">
+                           {% for x in gallery  %}
                                 <div class="item">
-                                    <img src="/static/assets/images/6.png" alt="partner">
+                                    <img src="/media/{{x.img}}" alt="TARS Memory">
                                 </div>
+                                {% endfor %}
                                 <div class="item">
                                     <img src="/static/assets/images/7.png" alt="partner">
                                 </div>
