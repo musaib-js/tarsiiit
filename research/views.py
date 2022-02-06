@@ -7,3 +7,9 @@ def researchhome(request):
     research = Research.objects.all()
     context = {'research' : research, 'fresearch':featuredresearch}  
     return render(request,  'research.html', context)
+
+def researchsingle(request, slug):
+    post = Research.objects.filter(slug = slug).first()
+    print(post)
+    context = {'post':post}
+    return render(request, 'post.html', context)

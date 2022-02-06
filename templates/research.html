@@ -75,13 +75,8 @@
                         </div>
                         <div class="blog-content">
                             <h2 class="blogpost-title">
-                            <a href="post-fullwidth.html">{{r.title}}</a>
+                            <a href="/research/{{r.slug}}">{{r.title}}</a>
                             </h2>
-                            <div class="blog-meta">
-                                <span>Dec 11, 2020</span>
-                                <span>by <a href="">Admin</a></span>
-                                <span><a href="">business</a>,<a href="">people</a></span>
-                            </div>
                             <p>{{r.desc | truncatechars:305 | safe}}
                             </p>
                             <a href="/research/{{r.slug}}" class="btn btn-dafault btn-details hvr-bounce-to-right">Continue Reading</a>

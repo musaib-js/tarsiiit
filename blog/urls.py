@@ -3,6 +3,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 urlpatterns = [
-    path('', views.bloghome, name = "bloghome")
+    path('', views.bloghome, name = "bloghome"),
+    path('<str:slug>/', views.blogpost, name = "blogpost")
 
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
