@@ -6,6 +6,8 @@ class Post(models.Model):
     author = models.CharField(max_length = 200)
     desc = models.TextField()
     img = models.ImageField(upload_to = 'media')
+    slug = models.CharField(max_length = 250, default = "nothing-yet")
+    is_featured = models.BooleanField(default=False)
 
 
     def __str__(self):

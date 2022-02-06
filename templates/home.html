@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<!--
+==================================================
+Slider Section Start
+================================================== -->
+<section id="hero-area" >
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div class="block wow fadeInUp" data-wow-delay=".3s">
+                
+                <!-- Slider -->
+                <section class="cd-intro">
+                    <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s" >
+                    <span>Welcome to TARS IIIT BHUBANESHWAR</span><br>
+                    <span class="cd-words-wrapper">
+                        <b class="is-visible">The Automation</b>
+                        <b>And Robotics</b>
+                        <b>Society</b>
+                        <b>IIIT Bhubaneshwar</b>
+                    </span>
+                    </h1>
+                    </section> <!-- cd-intro -->
+                    <!-- /.slider -->
+                    <h2 class="wow fadeInUp animated" data-wow-delay=".6s" >
+                        Inspiring workshops, insightful sessions by tech experts,lots of fun activities and competitions, and a lot more await you here.So get ready to immerse yourself with mind-blowing wisdom and to get in touch with tomorrow.
+                    </h2>
+                    <a class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right" data-wow-delay=".9s" href="#about">Know More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/#main-slider-->
+
+<!--
+==================================================
+About Section Start
+================================================== -->
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="block wow fadeInLeft" data-wow-delay=".3s" data-wow-duration="500ms">
+                    <h2>
+                    ABOUT US
+                    </h2>
+                    <p>
+                        The Automation And Robotics Society 2.0 of IIIT-Bh brings you to the world of technology .We provide the best experience with Robotics,Artificial Intelligence , Machine Learning, Automation and much more. Whether you like to create, invent or innovate or you would like to appease your curiosity about the various marvels of technology, TARS 2.0 is just the place. Inspiring workshops, insightful sessions by tech experts,lots of fun activities and competitions, and a lot more await you here.So get ready to immerse yourself with mind-blowing wisdom and to get in touch with tomorrow.
+                    </p>
+                    <p>
+                        TARS simplifes tech.
+                    </p>
+                </div>
+                
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
+                    <img src="/static/images/TarsLogo.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section> <!-- /#about -->
+
+
+<!--
+==================================================
+Research Section Start
+================================================== -->
+<section id="works" class="works">
+    <div class="container">
+        <div class="section-heading">
+            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Our Research</h1>
+            <p class="wow fadeInDown" data-wow-delay=".5s">
+                TARS is aimed at simplifying the tech for everyone and our research team has brought the following research to you.
+            </p>
+        </div>
+        <div class="row">
+            {% for r in research %}
+            <div class="col-md-4 col-sm-6">
+                <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+                    <div class="img-wrapper">
+                        <img src="/media/{{r.img}}" class="img-fluid" alt="this is a title" >
+                        <div class="overlay">
+                            <div class="buttons">
+                                <a target="_blank" href="single-portfolio.html">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                    <h4>
+                    <a href="#">
+                        {{r.title}}
+                    </a>
+                    </h4>
+                    <p>
+                        {{r.desc | truncatechars:45 | safe}}
+                    </p>
+                    </figcaption>
+                </figure>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section> <!-- #works -->
+<!--
+<!
+==================================================
+Posts Section Start
+================================================== -->
+<section id="works" class="works">
+    <div class="container">
+        <div class="section-heading">
+            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Our Posts</h1>
+            <p class="wow fadeInDown" data-wow-delay=".5s">
+                TARS is aimed at simplifying the tech for everyone and our content team has brought the following interesting writeups for you.
+            </p>
+        </div>
+        <div class="row">
+            {% for r in posts %}
+            <div class="col-md-4 col-sm-6">
+                <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+                    <div class="img-wrapper">
+                        <img src="/media/{{r.img}}" class="img-fluid" alt="this is a title" >
+                        <div class="overlay">
+                            <div class="buttons">
+                                <a target="_blank" href="single-portfolio.html">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                    <h4>
+                    <a href="#">
+                        {{r.title}}
+                    </a>
+                    </h4>
+                    <p>
+                        {{r.desc | truncatechars:45 | safe}}
+                    </p>
+                    </figcaption>
+                </figure>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section> <!-- #works -->
+<!--
+<!
+==================================================
+Research Section Start
+================================================== -->
+<section id="works" class="works">
+    <div class="container">
+        <div class="section-heading">
+            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Our Events</h1>
+            <p class="wow fadeInDown" data-wow-delay=".5s">
+                We don't only write, we conduct amazing and thrilling sessions to margin your acquaintances with tech
+            </p>
+        </div>
+        <div class="row">
+            {% for r in events %}
+            <div class="col-md-4 col-sm-6">
+                <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+                    <div class="img-wrapper">
+                        <img src="/media/{{r.img}}" class="img-fluid" alt="this is a title" >
+                        <div class="overlay">
+                            <div class="buttons">
+                                <a target="_blank" href="single-portfolio.html">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                    <h4>
+                    <a href="#">
+                        {{r.title}}
+                    </a>
+                    </h4>
+                    <p>
+                        {{r.desc | truncatechars:45 | safe}}
+                    </p>
+                    </figcaption>
+                </figure>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section> <!-- #works -->
+            <!--
+            ==================================================
+            Call To Action Section Start
+            ================================================== -->
+            <section id="call-to-action">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block">
+                                <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">SO WHAT DO YOU THINK ?</h1>
+                                <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Do you want to join the journey of task in unravelling the challenges in the field of technology <br> Click the button down below and go to the recruitment page of TARS to fill the recruitment form to initialise your TARS journey. </p>
+                                <a href="/recruitment" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Contact Us</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            {% endblock body %}
+           

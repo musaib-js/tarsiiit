@@ -4,6 +4,8 @@ from django.db import models
 class Research(models.Model):
     sno = models.AutoField(primary_key = True)
     title = models.CharField(max_length = 300)
+    slug = models.CharField(max_length=350, default="nothing-yet")
+    is_featured = models.BooleanField(default=False)
     desc = models.TextField()
     img = models.ImageField(upload_to = 'media')
 

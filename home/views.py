@@ -1,8 +1,10 @@
+from re import sub
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Team, Gallery
+from .models import Team, Gallery, Contact, Recruitment_Query
 from research.models import Research
 from events.models import Event
+from django.contrib import messages
 from blog.models import Post
 
 
@@ -12,9 +14,34 @@ def index(request):
     events  = Event.objects.all()[:3]
     gallery = Gallery.objects.all()
     context = {'research':research, 'posts':posts, 'events':events, 'gallery':gallery}
-    return render(request, 'index.html', context)
+    return render(request, 'home.html', context)
 
 def about(request):
     team = Team.objects.all()
     context = {'team':team}
     return render(request, 'about.html', context)
+
+def contact(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        message = request.POST['message']
+
+        newcontact = Contact(name = name, email = email, subject = subject, message = message)
+        newcontact.save()
+        messages.success(request, 'Message Sent! The TARS Mail Man Is On the Way :)')
+    return render(request, 'contact.html')
+
+def recruitment(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        collegeid = request.POST['collegeid']
+        branch = request.POST['branch']
+        whatsapp = request.POST['whatsapp']
+        proposal = request.POST['proposal']
+
+        newproposal = Recruitment_Query(name = name, college_id = collegeid, branch = branch, whatsapp = whatsapp, proposal = proposal)
+        newproposal.save()
+        messages.success(request, 'Message Sent! The TARS Mail Man Is On the Way :)')
+    return render(request, 'recruitment.html')
