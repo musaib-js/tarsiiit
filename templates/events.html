@@ -73,14 +73,14 @@
                         </div>
                         <div class="blog-content">
                             <h2 class="blogpost-title">
-                            <a href="/research/{{r.slug}}">{{r.title}}</a>
+                            <a href="/events/{{r.slug}}">{{r.title}}</a>
                             </h2>
                             <div class="blog-meta">
                                 <span>{{r.date}}</span>
                             </div>
                             <p>{{r.desc | truncatechars:305 | safe}}
                             </p>
-                            <a href="/research/{{r.slug}}" class="btn btn-dafault btn-details hvr-bounce-to-right">Continue Reading</a>
+                            <a href="/events/{{r.slug}}" class="btn btn-dafault btn-details hvr-bounce-to-right">Continue Reading</a>
                         </div>
                     </article>
                     {% endfor %}
@@ -88,5 +88,7 @@
             </div>
         </div>
 </section>
+
+
 <!--====  End of Blog Left sidebar  ====--> 
-            {% endblock body %}
+{% endblock body %}
