@@ -10,7 +10,8 @@ class Team(models.Model):
     fb_link = models.URLField()
     twitter_link = models.URLField()
     linkedin_link = models.URLField()
-    googleplus_link = models.URLField()
+    mail_link = models.URLField()
+    is_core = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

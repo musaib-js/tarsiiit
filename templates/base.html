@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="icon" href="/static/images/TarsLogo.svg">
-        <title>TARS IIIT BHUBANESHWAR</title>
+        <title>TARS IIIT Bhubaneshwar</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="author" content="">
@@ -34,6 +34,8 @@
         <link rel="stylesheet" href="/static/plugins/hover/hover-min.css">
         <!-- template main css file -->
         <link rel="stylesheet" href="/static/css/style.css">
+            {% block css %}{% endblock css %}
+
     </head>
     <body>
 
@@ -72,10 +74,11 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/research">Research</a>
                                     <a class="dropdown-item" href="/events">Events</a>
+                                    <a class="dropdown-item" href="/blog">Blog</a>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/blog">Blog</a>
+                                <a class="nav-link" href="/team">Team</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/recruitment">Recruitment</a>
@@ -151,5 +154,6 @@
 	<script src="/static/plugins/facncybox/jquery.fancybox.js"></script>
 	<!-- template main js -->
 	<script src="/static/js/main.js"></script>
+    {% block extrajs %}{% endblock extrajs %}
  	</body>
 </html>

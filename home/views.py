@@ -45,3 +45,9 @@ def recruitment(request):
         newproposal.save()
         messages.success(request, 'Message Sent! The TARS Mail Man Is On the Way :)')
     return render(request, 'recruitment.html')
+
+def team(request):
+    team = Team.objects.filter(is_core  = True)
+    not_core = Team.objects.filter(is_core  = False)
+    context = {'team':team, 'not_core': not_core}
+    return render(request, 'team.html', context)

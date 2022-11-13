@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.index, name = "Home"),
     path('about/', views.about, name = "About"),
     path('contact/', views.contact, name = "Contact"),
-    path('recruitment/', views.recruitment, name = "recruitment")
+    path('recruitment/', views.recruitment, name = "recruitment"),
+    path('team/', views.team, name = "team")
 
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

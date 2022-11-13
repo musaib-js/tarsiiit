@@ -64,6 +64,47 @@ About Section Start
     </div>
 </section> <!-- /#about -->
 
+<!--
+<!
+==================================================
+Research Section Start
+================================================== -->
+<section id="works" class="works">
+    <div class="container">
+        <div class="section-heading">
+            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Our Events</h1>
+            <p class="wow fadeInDown" data-wow-delay=".5s">
+                We don't only write, we conduct amazing and thrilling sessions to margin your acquaintances with tech
+            </p>
+        </div>
+        <div class="row">
+            {% for r in events %}
+            <div class="col-md-4 col-sm-6">
+                <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+                    <div class="img-wrapper">
+                        <img src="/media/{{r.img}}" class="img-fluid" alt="this is a title" >
+                        <div class="overlay">
+                            <div class="buttons">
+                                <a target="_blank" href="/events/{{r.slug}}">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                    <h4>
+                    <a href="/events/{{r.slug}}">
+                        {{r.title}}
+                    </a>
+                    </h4>
+                    <p>
+                        {{r.desc | truncatechars:45 | safe}}
+                    </p>
+                    </figcaption>
+                </figure>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
 <!--
 ==================================================
@@ -146,47 +187,7 @@ Posts Section Start
         </div>
     </div>
 </section> <!-- #works -->
-<!--
-<!
-==================================================
-Research Section Start
-================================================== -->
-<section id="works" class="works">
-    <div class="container">
-        <div class="section-heading">
-            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Our Events</h1>
-            <p class="wow fadeInDown" data-wow-delay=".5s">
-                We don't only write, we conduct amazing and thrilling sessions to margin your acquaintances with tech
-            </p>
-        </div>
-        <div class="row">
-            {% for r in events %}
-            <div class="col-md-4 col-sm-6">
-                <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
-                    <div class="img-wrapper">
-                        <img src="/media/{{r.img}}" class="img-fluid" alt="this is a title" >
-                        <div class="overlay">
-                            <div class="buttons">
-                                <a target="_blank" href="/events/{{r.slug}}">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <figcaption>
-                    <h4>
-                    <a href="/events/{{r.slug}}">
-                        {{r.title}}
-                    </a>
-                    </h4>
-                    <p>
-                        {{r.desc | truncatechars:45 | safe}}
-                    </p>
-                    </figcaption>
-                </figure>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section> <!-- #works -->
+ <!-- #works -->
             <!--
             ==================================================
             Call To Action Section Start
